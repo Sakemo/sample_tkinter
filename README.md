@@ -5,7 +5,7 @@ Este código é um exemplo de um aplicativo Tkinter GUI para uma livraria. Ele p
 # Começando
 Para executar o aplicativo, basta executar o seguinte comando:
 
-'python3 main.py'
+'python3 estudos.py'
 
 # Pré-requisitos
 Este aplicativo requer Python 3 e a biblioteca Tkinter.
