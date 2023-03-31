@@ -14,7 +14,6 @@ import tkinter as tk
 def get_name():
     comprador = name_entry.get()
     login.destroy()
-    quan = 1
     livros = [
         ("Logica de Programação", 79.30), 
         ("Senhor dos Anéis", 59.99),
@@ -27,11 +26,11 @@ def get_name():
         ("A Menina que Roubava Livros", 27.99),
         ("O Nome do Vento", 64.00),
         ("A Dança dos Dragões", 89.90),
-        ("O Festim dos Corvos", 79.90)
+        ("O Festim dos Corvos", 79.90),
+        ("Anne de Green Gables", 23.99)
         ]
 
     vendedor = "Marcos"
-    comissao = 30
 
     root = tk.Tk()
     root.title(f'Loja de Livros do {vendedor}')
@@ -41,7 +40,6 @@ def get_name():
     label.pack()
     table = tk.Frame(root)
     table.pack()
-    selected_row = None
 
     def select_row(row):
         global selected_row
@@ -49,13 +47,13 @@ def get_name():
         print(selected_row)
         for i,(livro,preco) in enumerate(livros):
             if selected_row == i:
+                comissao = (preco*0.3)
                 mesage = tk.Tk()
                 mesage.title('Sucesso')
                 mesage.geometry('500x50')
                 print_label = tk.Label(mesage, text=f'Olá {comprador}! Sua compra do livro {livro} por R${preco} foi efetuada com sucesso')
                 print_label.pack(pady=5)
-                # print(f'Olá {comprador}! Sua compra do livro {livro} por {preco} foi efetuada com sucesso')
-
+                print(f"Olá {vendedor}! Você recebeu sua comissão de R${comissao} pela compra do cliente {comprador} do livro {livro} por R${preco}")
 
     for i,(livro, preco) in enumerate(livros):
         tk.Label(table, text=livro).grid(row=i, column=0)
